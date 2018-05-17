@@ -23,7 +23,7 @@ export class EnsuringComponent implements OnInit {
   params = {
     personMagicId:'',
     roomMagicId:'',
-    serialNumber:'GB8ZAWGE0A'
+    serialNumber:''
   };
   constructor(
     private http:HttpClient,
@@ -32,16 +32,9 @@ export class EnsuringComponent implements OnInit {
   ) { }
   cancel(){
     if(this.type==1){
-      this.router.navigate(['/waiting/1']);
+      this.router.navigate(['/waiting/1/'+this.params.serialNumber]);
     }else{
-      this.router.navigate(['/waiting/2']);
-    }
-  }
-  opeFn(type){
-    if(type == 1){
-      this.router.navigate(['/waiting/1'])
-    }else{
-      this.router.navigate(['/waiting/2'])
+      this.router.navigate(['/waiting/2/'+this.params.serialNumber]);
     }
   }
   ensure(){
@@ -77,6 +70,7 @@ export class EnsuringComponent implements OnInit {
   }
   ngOnInit() {
     this.type = this.route.params["value"].type;
+    this.params.serialNumber = this.route.params["value"].serialNumber;
 
     this.cardData.name = this.route.params["value"].name;
     this.cardData.registerTime = this.route.params["value"].registerTime;

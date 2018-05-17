@@ -16,6 +16,7 @@ export class ChoosingComponent implements OnInit {
     gender:'',
     picUrl:'',
     statusName:'',
+    serialNumber:'',
 
     roomMagicId:'',
     roomName:'',
@@ -27,7 +28,8 @@ export class ChoosingComponent implements OnInit {
     private router: Router
   ) { }
   returnBtn(){
-    this.router.navigate(['/waiting/1']);
+    console.log(this.params.serialNumber);
+    this.router.navigate(['/waiting/1/'+this.params.serialNumber]);
   }
   clickRoom(item){
     this.params.personMagicId = this.route.params["value"].personMagicId;
@@ -38,6 +40,7 @@ export class ChoosingComponent implements OnInit {
     this.params.picUrl = this.route.params["value"].picUrl;
     this.params.statusName = this.route.params["value"].statusName;
 
+
     this.params.roomMagicId = item.roomMagicId;
     this.params.roomName = item.roomName;
 
@@ -47,7 +50,8 @@ export class ChoosingComponent implements OnInit {
     this.router.navigate(['/ensuring',params]);
   }
   ngOnInit() {
-    const params = new HttpParams().set('serialNumber','GB8ZAWGE0A');
+    this.params.serialNumber = this.route.params["value"].serialNumber;
+    const params = new HttpParams().set('serialNumber',this.params.serialNumber);
     this.http.get('/case/list/free/room',{params})
       .subscribe(res=>{
         this.roomDataList = (res as any).data;//res 对象被声明为any，则跳过类型检测

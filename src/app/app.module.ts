@@ -10,7 +10,7 @@ import { EnsuringComponent } from './ensuring/ensuring.component';
 
 export const ROUTES:Routes = [
   { path:'',redirectTo: 'waiting/1', pathMatch:'full' },
-  { path:'waiting/:type',component:WaitingComponent },
+  { path:'waiting/:type/:serialNumber',component:WaitingComponent },
   { path:'choosing',component:ChoosingComponent },
   { path:'ensuring',component:EnsuringComponent },
   { path:'**',component: WaitingComponent}

@@ -9,6 +9,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class WaitingComponent implements OnInit {
   type = 1;//1提讯，2离开
+  serialNumber='';
   cardDataList = [];
   constructor(
     private http:HttpClient,
@@ -20,6 +21,7 @@ export class WaitingComponent implements OnInit {
   }
   cliclCard(item){
     item.type = this.type;
+    item.serialNumber = this.serialNumber;
     if(this.type == 1){
       this.router.navigate(['/choosing',item]);
     }else{
@@ -28,8 +30,15 @@ export class WaitingComponent implements OnInit {
   }
   ngOnInit() {
     const type = this.route.params["value"].type;
+    const serialNumber = this.route.params["value"].serialNumber;
     this.type = type;
-    const params = new HttpParams().set('serialNumber','GB8ZAWGE0A');
+    this.serialNumber = serialNumber;
+    if(serialNumber){
+      //const params = new HttpParams().set('serialNumber','GB8ZAWGE0A');
+      const params = new HttpParams().set('serialNumber',serialNumber);
+    }else{
+      alert('平板序列号未传入');
+    }
     this.http.get('/case/list/room/person',{params})
       .subscribe(res=>{//success
         this.cardDataList = (res as any).data;

@@ -1,6 +1,6 @@
 {
   "/case": {
-    "target": "http://192.168.35.87:8700",
+    "target": "http://192.168.35.29:8700",
     "secure": "false",
     "changeOrigin": true,
     "logLevel": "debug"
