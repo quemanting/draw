@@ -1,0 +1,59 @@
+<div class='ensuringRoom'>
+  <div class="bgimg">
+    <img src="assets/img/background.png" >
+  </div>
+
+  <div class="ensuringRoomBg"></div>
+
+
+  <div class="panel" >
+    <div class="info-card">
+      <div class="card-wrap">
+        <div class="card-header">
+          <span class="card-header-time">
+            {{cardData.retentionTime}}
+          </span>
+        </div>
+        <img src="{{cardData.picUrl}}" class="card-img">
+        <span class="init-time"> {{cardData.registerTime}}</span>
+        <section>
+          <span class="name" *ngIf="cardData.name!='null'">{{cardData.name}}</span>
+          <span class="sex"> {{cardData.gender =='male'?'男':'女'}}</span>
+          <span class="status">{{cardData.statusName}}</span>
+        </section>
+      </div>
+    </div>
+    <div class="icline">
+      <img src="assets/img/line.png">
+    </div>
+    <div class="ictips" *ngIf="cardData.roomName" >
+      选择成功，请到<span>{{cardData.roomName}}</span>！
+    </div>
+    <div class="ictips" *ngIf="!cardData.roomName">
+      是否确认离开？
+    </div>
+    <div>
+      <span class="ensure" (click)="ensure()">确定</span>
+      <span class="cancel" (click)="cancel()">取消</span>
+    </div>
+  </div>
+
+  <div class="mask" *ngIf="opeSuccess||opeError"></div>
+
+  <div class="tip-board" *ngIf="opeSuccess">
+    <div class="tips">消息</div>
+    <div class="content">
+      <img class="tip-img" src="assets/img/tip_success.png"> 操作成功！
+    </div>
+  </div>
+
+  <div class="tip-board" *ngIf="opeError">
+    <div class="tips">消息</div>
+    <div class="content">
+      <img class="tip-img" src="assets/img/tip_error.png"> 操作失败！
+    </div>
+  </div>
+
+
+
+</div>

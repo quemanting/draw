@@ -1,0 +1,30 @@
+<div class='choosingRoom'>
+  <div class="bgimg">
+    <img src="assets/img/background.png" >
+  </div>
+
+  <div class="choosingRoomBg"></div>
+
+  <div class="panel">
+    <p class="title">请选择功能室</p>
+    <div class="line">
+      <p class="count">当前可用功能室：<span>{{roomDataList.length}} </span>个</p>
+      <p class="returnBtn" (click)="returnBtn()">返回</p>
+    </div>
+    <div class="card-board">
+      <div class="room-card" *ngFor="let item of roomDataList">
+        <div class="card-wrap" (click)="clickRoom(item)">
+          <div class="no-person"
+            [ngClass]="{'no-person':item.isRoomFree =='Y', 'has-person':item.isRoomFree=='N'}"
+          >
+            {{item.isRoomFree =='Y'?'无人':'有人'}}
+          </div>
+          <div class="room-name">
+            {{item.roomName}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

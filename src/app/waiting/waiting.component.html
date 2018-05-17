@@ -1,0 +1,35 @@
+<div class='waitingRoom'>
+  <div class="bgimg">
+    <img src="assets/img/background.png" >
+  </div>
+  <div class="waittingRoomBg"></div>
+  <div class="panel">
+    <p class="title">请选择待办理业务人员</p>
+    <div class="line">
+       <p class="count">当前侯问室人数：<span>{{cardDataList.length}} </span>人</p>
+       <p class="returnBtn" (click)="returnBtn()">返回</p>
+    </div>
+    <div class="card-board">
+
+       <div class="info-card" *ngFor="let item of cardDataList" (click)="cliclCard(item)">
+        <div class="card-wrap">
+          <div class="card-header">
+            <span class="card-header-time">
+              {{item.retentionTime}}
+            </span>
+          </div>
+          <img src="{{item.picUrl}}" class="card-img">
+          <span class="init-time">{{item.registerTime}}</span>
+          <div class="init-info">
+             <span class="name" *ngIf="item.name!='null'">{{item.name}}</span>
+             <span class="sex">
+              {{item.gender =='male'?'男':'女'}}
+             </span>
+            <span class="status">{{item.statusName}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

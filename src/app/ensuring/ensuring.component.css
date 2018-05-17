@@ -1,0 +1,238 @@
+.ensuringRoom{
+  margin:0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.ensuringRoom .ensuringRoomBg{
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  background-color: #031441;
+  opacity: 0.7;
+  top:2.5%;
+  left: 2.5%;
+  z-index: -1;
+}
+.ensuringRoom .bgimg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+}
+.ensuringRoom .bgimg img{
+  width: 100%;
+  height: 100%;
+}
+.ensuringRoom .panel{
+  width:100%;
+  height:100%;
+  z-index: 2;
+  text-align: center;
+}
+.ensuringRoom .title{
+  text-align: center;
+  color:#068899;
+  font-size:35px;
+  padding-top: 2%;
+}
+.ensuringRoom .count{
+  text-align: left;
+  color: #fff;
+  font-size:25px;
+  padding-top: 12px;
+  line-height: 3px;
+  padding-left: 5%;
+}
+.ensuringRoom .line{
+  text-align: center;
+  display: inline-block;
+  margin-top: 2%;
+  width: 90%;
+  background-color: #12497F;
+  height: 2px;
+}
+.ensuringRoom .card-board{
+  box-sizing: border-box;
+  margin:0 5%;
+  height: 70%;
+  margin-top: 1%;
+  color:#fff;
+  overflow: auto;
+}
+.room-card{
+  box-sizing: border-box;
+  width: 20%;
+  height: 49%;
+  font-size: 12px;
+  text-align: left;
+  float: left;
+  margin-top: 1%;
+}
+.room-card .card-wrap{
+  width: 75%;
+  margin: 0 auto;
+  border:2px solid #163A9F;
+  height: 80%;
+  text-align: center;
+  position: relative;
+  background-color:#031441;
+  border-radius: 3px;
+}
+.room-card .card-wrap:hover{
+  background-color:#10638D;
+  border:2px solid #2B79A1;
+}
+.room-card .has-person{
+  display: inline-block;
+  padding: 3px 8px;
+  background-color:#FF4C4D;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin-top: 35%;
+}
+.room-card .no-person{
+  display: inline-block;
+  padding: 3px 8px;
+  background-color:#29D6A0;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin-top: 35%;
+}
+.room-card .room-name{
+  margin-top: 10%;
+  font-size: 18px;
+}
+.ensuringRoom .icline{
+  margin:0 auto;
+}
+.ensuringRoom .icline img{
+  width: 30%;
+}
+
+
+
+.info-card{
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 200px;
+  font-size: 25px;
+  text-align: left;
+  color: #fff
+}
+.info-card .card-wrap{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 15%;
+}
+.info-card .card-header{
+  height: 35px;
+  line-height: 35px;
+  text-align: left;
+  padding-left: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #0C406F;
+}
+.info-card .card-header-time{
+  font-size: 18px;
+}
+.info-card .card-img{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  height:150px;
+}
+.info-card .init-time{
+  display: inline-block;
+  font-size: 18px;
+}
+.info-card .name{
+  display: inline-block;
+  font-size: 18px;
+  padding-right: 10px;
+}
+.info-card .sex{
+  padding-right: 10px;
+  font-size: 18px;
+}
+.info-card .status{
+  font-size: 18px;
+}
+.ensuringRoom .ictips{
+  font-size: 18px;
+  color: #30A9B8;
+}
+.ensuringRoom .ensure{
+  font-size: 16px;
+  margin-top: 15px;
+  display: inline-block;
+  padding: 7px 14px;
+  background-color: #25C0DE;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 40px;
+}
+.ensuringRoom .cancel{
+  font-size: 16px;
+  margin-top: 15px;
+  display: inline-block;
+  padding: 7px 14px;
+  background-color:#01355A;
+  color: #91C0D8;
+  border-radius: 5px;
+}
+
+.ensuringRoom .mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+}
+.ensuringRoom .tip-board{
+  display: inline-block;
+  box-sizing: border-box;
+  width: 20%;
+  min-width: 150px;
+  height: 20%;
+  margin:0 auto;
+  position: absolute;
+  opacity: 1;
+  top:35%;
+  left: 50%;
+  margin-left: -10%;
+  color:#fff;
+  border-radius: 5px;
+}
+.ensuringRoom .tip-board .tips{
+  padding-left: 10px;
+  height: 25px;
+  line-height: 25px;
+  border:1px solid #666;
+  background-color: #5090D8;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.ensuringRoom .tip-board .content{
+  text-align: center;
+  color: #000;
+  height: 60px;
+  line-height: 60px;
+  min-height: 60px;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.ensuringRoom .tip-board .tip-img{
+  width: 25px;
+  position: relative;
+  top:6px;
+}
