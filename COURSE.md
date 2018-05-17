@@ -13,7 +13,9 @@
 因为需要请求后台数据，所以通过webpack设置了代理，在draw文件夹下的proxy.config.js文件，需要切换目标地址的修改这个文件并重新`npm start` 或者 `ng serve`即可
 
 `http://localhost:4200/#/waiting/1`:提讯功能
+
 `http://localhost:4200/#/waiting/2`:离开功能
+
 这里使用了hash路由，原因之后描述
 
 ## 打包
@@ -23,11 +25,16 @@
 ## 测试打包是否成功
 因为draw项目涉及请求后台数据，所以需要nginx代理转发来测试
 假如说你想通过
-`http://本机IP/qt`或者`http://localhost/qt`来访问网页，则你修改dist文件夹的index.html
+`http://本机IP/qt`或者`http://localhost/qt`
+
+来访问网页，则你修改dist文件夹的index.html
+
 `<base href="/">改为<base href="/qt/">`
 
 同时假如你的接口类似
+
 `http://192.168.35.29:8700/case/list/room/person`
+
 `http://192.168.35.29:8700/case/list/free/room`
 
 则nginx配置为
@@ -58,14 +65,18 @@ Angular采用默认的LocationStrategy路由(普通路由，不带#)，项目打
 
 如果使用HashLocationStrateg路由
 hash路由原理：
+
 `http://localhost/qt/#/waiting/1`
+
 在第一个#后面出现的任何字符，都会被浏览器解读为位置标识符。这意味着，这些字符都不会被发送到服务器端。
 浏览器实际发出的请求是
+
 ```
 GET /qt = HTTP/1.1
 Host: localhost
 Referer:http://localhost/qt/
 ```
+
 这个时候Angular项目前端路由就可以读取#后的标志符`waiting/1`然后前端根据相应配置显示这个`waiting/1`页面的内容
 
 ```
@@ -75,14 +86,14 @@ draw/src/app.modules.ts
 imports: [
   BrowserModule,
   HttpClientModule,
-  RouterModule.forRoot(ROUTES,{useHash: true})//使用哈希路由
+  RouterModule.forRoot(ROUTES,{useHash:true})//使用哈希路由
 ],
 
 若不使用则是
 imports: [
   BrowserModule,
   HttpClientModule,
-  RouterModule.forRoot(ROUTES)//使用哈希路由
+  RouterModule.forRoot(ROUTES)//使用普通路由
 ],
 ```
 
