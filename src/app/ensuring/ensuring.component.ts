@@ -46,7 +46,7 @@ export class EnsuringComponent implements OnInit {
           that.opeSuccess = true;
           that.opeError = false;
           setTimeout(()=>{
-            //if(typeof MainWindow !='undefined'){MainWindow.backToMain()}
+            if(typeof MainWindow !='undefined'){MainWindow.backToMain()}
           },1000);
         },error=>{
           that.opeSuccess = false;
@@ -59,7 +59,7 @@ export class EnsuringComponent implements OnInit {
           that.opeSuccess = true;
           that.opeError = false;
           setTimeout(()=>{
-            //if(typeof MainWindow !='undefined'){MainWindow.backToMain()}
+            if(typeof MainWindow !='undefined'){MainWindow.backToMain()}
           },1000);
         },error=>{
           that.opeSuccess = false;

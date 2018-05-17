@@ -17,7 +17,7 @@ export class WaitingComponent implements OnInit {
     private route: ActivatedRoute,
   ) {}
   returnBtn(){
-    //if(typeof MainWindow !='undefined'){MainWindow.backToMain()}
+    if(typeof MainWindow !='undefined'){MainWindow.backToMain()}
   }
   cliclCard(item){
     item.type = this.type;
